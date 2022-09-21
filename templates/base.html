@@ -10,6 +10,11 @@
     type="image/x-icon">
 {% endblock %}
 
+{% block scripts %}
+{{ super() }}
+{{ moment.include_moment() }}
+{% endblock %}
+
 {% block navbar %}
 <div class="navbar navbar-inverse" role="navigation">
     <div class="container">
@@ -38,7 +43,3 @@
 </div>
 {% endblock %}
 
-{% block scripts %}
-{{ super() }}
-{{ moment.include_moment() }}
-{% endblock %}
