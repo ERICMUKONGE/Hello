@@ -8,7 +8,7 @@ from wtforms.validators import DataRequired
 from flask_migrate import Migrate
 import os
 from flask_sqlalchemy import SQLAlchemy
-
+from flask_mail import Mail
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 app = Flask(__name__)
@@ -25,6 +25,7 @@ db = SQLAlchemy(app)
 bootstrap = Bootstrap(app)
 moment = Moment(app)
 migrate = Migrate(app,db)
+mail = Mail(app)
 
 class NameForm(FlaskForm):
     name= StringField('What is your name?', validators=[DataRequired()])
